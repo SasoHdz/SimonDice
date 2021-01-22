@@ -82,6 +82,51 @@
       .hide {
         display: none;
       }
+
+      .inNaranja {
+          position: relative;
+          animation-name: inicioNaranja;
+          animation-duration: 2s;
+      }
+
+      @keyframes inicioNaranja {
+          to {top: 0px; right:0px;}
+          from {top: 80px; right:80px;}
+      }
+
+      .inVerde {
+          position: relative;
+          animation-name: inicioVerde;
+          animation-duration: 2s;
+      }
+
+      @keyframes inicioVerde {
+          to {top: 0px; left:0px;}
+          from {top: 80px; left:80px;}
+      }
+
+      .inCeleste {
+          position: relative;
+          animation-name: inicioCeleste;
+          animation-duration: 2s;
+      }
+
+      @keyframes inicioCeleste {
+          to {bottom: 0px; right:0px;}
+          from {bottom: 80px; right:80px;}
+      }
+
+      .inVioleta {
+          position: relative;
+          animation-name: inicioVioleta;
+          animation-duration: 2s;
+      }
+
+      @keyframes inicioVioleta {
+          to {bottom: 0px; left:0px;}
+          from {bottom: 80px; left:80px;}
+      }
+
     </style>
   </head>
   <body>
@@ -106,6 +151,10 @@
 
         inicializar() {
           btnEmpezar.classList.add('hide')
+          naranja.classList.add('inNaranja')
+          verde.classList.add('inVerde')
+          celeste.classList.add('inCeleste')
+          violeta.classList.add('inVioleta')
         }
       }
 
