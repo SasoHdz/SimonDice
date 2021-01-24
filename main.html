@@ -148,12 +148,12 @@
         constructor() {
           this.inicializar()
           this.generarSecuencia()
-          this.siguienteNivel()
+          setTimeout(()=>this.siguienteNivel(),3000)
         }
 
         inicializar() {
           btnEmpezar.classList.add('hide')
-          this.nivel = 1
+          this.nivel = 7
           this.colores = {
             celeste,
             violeta,
@@ -179,31 +179,31 @@
         transformarNumeroAColor(numero){
           switch(numero){
             case 0:
-              return "celeste"
+              return 'celeste'
             case 1:
-              return "violeta"
+              return 'violeta'
             case 2:
-              return "naranja"
+              return 'naranja'
             case 3:
-              return "verde"
+              return 'verde'
 
           }
         }
 
         iluminarSecuencia(){
           for(let i=0;i<this.nivel;i++){
-             const let color = this.transformarNueroAColor(this.secuencia[i])
-             setTimeOut(() => this.iluminarColor(color),i*1000)
+             const color = this.transformarNumeroAColor(this.secuencia[i])
+             setTimeout(() => this.iluminarColor(color),i*1000)
           }
         }
 
         iluminarColor(color){
-          this.colores[color]celeste.classList.add("light")
-          setTimeOut(()=> this.apagarColor(color),380)
+          this.colores[color].classList.add('light')
+          setTimeout(()=> this.apagarColor(color),380)
         }
 
         apagarColor(color){
-          this.colores[color].classList.remove("light")
+          this.colores[color].classList.remove('light')
         }
 
       }
