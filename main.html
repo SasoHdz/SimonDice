@@ -148,6 +148,7 @@
         constructor() {
           this.inicializar()
           this.generarSecuencia()
+          this.siguienteNivel()
         }
 
         inicializar() {
@@ -170,6 +171,41 @@
           this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random()*4))
           
         }
+
+        siguienteNivel(){
+          this.iluminarSecuencia()
+        }
+
+        transformarNumeroAColor(numero){
+          switch(numero){
+            case 0:
+              return "celeste"
+            case 1:
+              return "violeta"
+            case 2:
+              return "naranja"
+            case 3:
+              return "verde"
+
+          }
+        }
+
+        iluminarSecuencia(){
+          for(let i=0;i<this.nivel;i++){
+             const let color = this.transformarNueroAColor(this.secuencia[i])
+             setTimeOut(() => this.iluminarColor(color),i*1000)
+          }
+        }
+
+        iluminarColor(color){
+          this.colores[color]celeste.classList.add("light")
+          setTimeOut(()=> this.apagarColor(color),380)
+        }
+
+        apagarColor(color){
+          this.colores[color].classList.remove("light")
+        }
+
       }
 
       function empezarJuego() {
